@@ -1,10 +1,12 @@
-import Header from '../header'
+import Header from "../header";
 
-export default function Layout(props) {
-    return (
-        <>
-        <Header />
-        {props.children}
-        </>
-    )
+function Layout(props) {
+  return (
+    <>
+      <Header />
+      {props.children}
+    </>
+  );
 }
+
+export default Layout;

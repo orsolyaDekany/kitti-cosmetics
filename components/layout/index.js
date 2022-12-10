@@ -1,9 +1,9 @@
-import Header from "../header";
+import ResponsiveAppBar from "../navbar/ResponsiveAppBar";
 
 function Layout(props) {
   return (
     <>
-      <Header />
+      <ResponsiveAppBar />
       {props.children}
     </>
   );

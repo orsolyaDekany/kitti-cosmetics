@@ -8,6 +8,8 @@ import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -22,9 +24,9 @@ const drawerWidth = 240;
 const useStyles = makeStyles({
   root: {
     "& .MuiAppBar-root": {
-      boxShadow: "10px 10px 5px 0px #F7A392",
       backgroundColor: "#FFF6F4",
       padding: "6px 20px",
+      boxShadow: "none",
     },
     "& .MuiButton-root": {
       padding: "0px 10px",
@@ -46,26 +48,35 @@ function ResponsiveAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <Image
+        alt="Logo"
+        sx={{
+          flexGrow: 1,
+          display: { xs: "none", sm: "block" },
+        }}
+        src={logo}
+      />
       <Divider />
       <List>
         {navItems.map((navItem) => (
-          <Link
-            key={navItem}
-            href={navItem.path}
-            style={{
-              fontFamily: "Playfair Display",
-              textTransform: "capitalize",
-              color: "#252525",
-              fontSize: "18px",
-              textDecoration: "none",
-              margin: "0px 12px",
-            }}
-          >
-            {navItem.label}
-          </Link>
+          <ListItem key={navItem} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <Link
+                key={navItem}
+                href={navItem.path}
+                style={{
+                  fontFamily: "Playfair Display",
+                  textTransform: "capitalize",
+                  color: "#252525",
+                  fontSize: "18px",
+                  textDecoration: "none",
+                  margin: "0px 12px",
+                }}
+              >
+                {navItem.label}
+              </Link>
+            </ListItemButton>
+          </ListItem>
         ))}
       </List>
     </Box>

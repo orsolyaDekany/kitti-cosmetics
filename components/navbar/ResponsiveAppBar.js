@@ -1,4 +1,6 @@
 import * as React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -6,25 +8,16 @@ import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
 import logo from "../../assets/logo.svg";
+import navItems from "./ResponsiveAppBar.data";
 
 const drawerWidth = 240;
-const navItems = [
-  "Főoldal",
-  "Sminktetoválásról",
-  "Munkáim",
-  "Árlista",
-  "Kapcsolat",
-];
 
 const useStyles = makeStyles({
   root: {
@@ -49,6 +42,8 @@ function ResponsiveAppBar(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const router = useRouter();
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -56,12 +51,21 @@ function ResponsiveAppBar(props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+        {navItems.map((navItem) => (
+          <Link
+            key={navItem}
+            href={navItem.path}
+            style={{
+              fontFamily: "Playfair Display",
+              textTransform: "capitalize",
+              color: "#252525",
+              fontSize: "18px",
+              textDecoration: "none",
+              margin: "0px 12px",
+            }}
+          >
+            {navItem.label}
+          </Link>
         ))}
       </List>
     </Box>
@@ -83,23 +87,33 @@ function ResponsiveAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            <Image
-              alt="Logo"
-              sx={{
-                flexGrow: 1,
-                display: { xs: "none", sm: "block" },
-              }}
-              src={logo}
-            />
-          </Typography>
+
+          <Image
+            alt="Logo"
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block" },
+            }}
+            src={logo}
+          />
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button
+            {navItems.map((navItem) => (
+              <Link
+                className={router.pathname == "/" ? "active" : ""}
+                key={navItem}
+                href={navItem.path}
+                style={{
+                  fontFamily: "Playfair Display",
+                  textTransform: "capitalize",
+                  color: "#252525",
+                  fontSize: "18px",
+                  textDecoration: "none",
+                  margin: "0px 12px",
+                }}
+              >
+                {navItem.label}
+              </Link>
+              /*<Button
                 key={item}
                 sx={{
                   fontFamily: "Playfair Display",
@@ -109,7 +123,7 @@ function ResponsiveAppBar(props) {
                 }}
               >
                 {item}
-              </Button>
+              </Button>*/
             ))}
           </Box>
         </Toolbar>

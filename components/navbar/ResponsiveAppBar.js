@@ -24,7 +24,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles({
   root: {
     "& .MuiAppBar-root": {
-      backgroundColor: "#FFF6F4",
+      backgroundColor: "#F7A392",
       padding: "6px 20px",
       boxShadow: "none",
     },
@@ -65,10 +65,9 @@ function ResponsiveAppBar(props) {
                 key={navItem}
                 href={navItem.path}
                 style={{
-                  fontFamily: "Playfair Display",
                   textTransform: "capitalize",
-                  color: "#252525",
-                  fontSize: "18px",
+                  color: "#FFFFFF",
+                  fontSize: "16px",
                   textDecoration: "none",
                   margin: "0px 12px",
                 }}
@@ -114,12 +113,11 @@ function ResponsiveAppBar(props) {
                 key={navItem}
                 href={navItem.path}
                 style={{
-                  fontFamily: "Playfair Display",
-                  textTransform: "capitalize",
-                  color: "#252525",
-                  fontSize: "18px",
+                  textTransform: "uppercase",
+                  color: "#FFFFFF",
+                  fontSize: "14px",
                   textDecoration: "none",
-                  margin: "0px 12px",
+                  padding: "2px 12px",
                 }}
               >
                 {navItem.label}
@@ -153,7 +151,7 @@ function ResponsiveAppBar(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              backgroundColor: "#FFF6F4",
+              backgroundColor: "#F7A392",
             },
           }}
         >

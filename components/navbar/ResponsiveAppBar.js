@@ -12,11 +12,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
-import logo from "../../assets/logo.svg";
 import navItems from "./ResponsiveAppBar.data";
 
 const drawerWidth = 240;
@@ -24,7 +21,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles({
   root: {
     "& .MuiAppBar-root": {
-      backgroundColor: "#F7A392",
+      backgroundColor: "#FFF6F4",
       padding: "6px 20px",
       boxShadow: "none",
     },
@@ -54,7 +51,9 @@ function ResponsiveAppBar(props) {
           flexGrow: 1,
           display: { xs: "none", sm: "block" },
         }}
-        src={logo}
+        src="/logo.svg"
+        width={130}
+        height={130}
       />
       <Divider />
       <List>
@@ -66,7 +65,7 @@ function ResponsiveAppBar(props) {
                 href={navItem.path}
                 style={{
                   textTransform: "capitalize",
-                  color: "#FFFFFF",
+                  color: "#252525",
                   fontSize: "16px",
                   textDecoration: "none",
                   margin: "0px 12px",
@@ -104,7 +103,9 @@ function ResponsiveAppBar(props) {
               flexGrow: 1,
               display: { xs: "none", sm: "block" },
             }}
-            src={logo}
+            src="/logo.svg"
+            width={130}
+            height={130}
           />
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((navItem) => (
@@ -114,7 +115,7 @@ function ResponsiveAppBar(props) {
                 href={navItem.path}
                 style={{
                   textTransform: "uppercase",
-                  color: "#FFFFFF",
+                  color: "#252525",
                   fontSize: "14px",
                   textDecoration: "none",
                   padding: "2px 12px",
@@ -157,12 +158,6 @@ function ResponsiveAppBar(props) {
         >
           {drawer}
         </Drawer>
-      </Box>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </Typography>
       </Box>
     </Box>
   );

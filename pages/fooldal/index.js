@@ -1,34 +1,44 @@
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
 import IntroductionImage from "../../assets/introduction.svg";
-import Kitti from "../../assets/Kitti_intro.png";
+import Kitti from "../../assets/Kitti_intro.svg";
 import DecorationDivider from "../../assets/decoration_bottom.svg";
 import { makeStyles } from "@material-ui/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import {
+  roseColor,
+  orangeColor,
+  darkColor,
+  centerDiv,
+  container,
+} from "../../assets/jss/mui-kit";
+import Parallax from "../../components/parallax/Parallax";
 
 const useStyles = makeStyles({
+  centerDiv,
+  container,
   root: {
     "& .MuiGrid-root": {
       backgroundColor: "#FFF6F4",
-      padding: "0",
     },
   },
-  BannerText: {
+  roseColor,
+  orangeColor,
+  darkColor,
+  heroTitle: {
     lineHeight: "1.5",
-    color: "#252525",
+    color: "#FFFFFF",
     fontFamily: "Playfair Display",
   },
-  BannerText2: {
-    color: "#F7A392",
+  heroDescription: {
+    color: "#FFFFFF",
     fontFamily: "Playfair Display",
   },
-  BannerTextContainer: {
-    width: "80%",
-  },
-  Image: {
-    marginLeft: "100px",
-  },
-  IntroductionSection: {
-    padding: "80px 100px",
+  alignCenterGrid: {
+    marginLeft: "auto",
+    marginRight: "auto",
   },
 });
 
@@ -37,53 +47,67 @@ function HomePage() {
 
   return (
     <>
-      <Grid container className={classes.root} spacing={{ sm: 12, md: 2 }}>
-        <Grid item lg={6} sm={6}>
-          <Image
-            alt="Kitti"
-            className={classes.Image}
-            src={Kitti}
-            width="400px"
-          ></Image>
-        </Grid>
-        <Grid item lg={6} sm={6}>
-          <div className={classes.BannerTextContainer}>
-            <h1 className={classes.BannerText}>
-              Varázsold Szemöldököd Tökéletesebbé
-            </h1>
-            <h2 className={classes.BannerText2}>Kolozsvári Kittivel</h2>
-          </div>
-        </Grid>
-      </Grid>
+      <Parallax
+        responsive
+        filterLight
+        image={"/heroImage.jpg"}
+        alt="Kitti Image"
+      >
+        <div className={classes.container}>
+          <Grid
+            container
+            className={classes.root.IntroductionSection}
+            spacing={10}
+          >
+            <Grid item xs={12} sm={12} md={8}>
+              <h1 className={classes.heroTitle}>
+                Kolozsvári Kitti Sminktetováló
+              </h1>
+              <p className={classes.heroDescription}>
+                „Az elegancia az egyetlen szépség, mely soha nem fakul.”
+              </p>
+            </Grid>
+          </Grid>
+        </div>
+      </Parallax>
 
-      <Grid container className={classes.IntroductionSection} spacing={10}>
-        <Grid
-          item
-          className={classes.BannerTextContainer}
-          xs={12}
-          lg={6}
-          sx={{ width: "20%" }}
-        >
-          <h1>Kolozsvári Kitti Sminktetováló</h1>
-          <span>
-            „Az elegancia az egyetlen szépség, mely soha nem fakul.” a
-            természetességgel párban.
-          </span>
-          <span>
-            Pont emiatt is törekszem a természetes szépség erősítésére,
-            kiegészítésére és elérésére. Amennyiben megszületett az elhatározás,
-            hogy sminktetoválást szeretne, de még szüksége van bővebb
-            információkra böngésszen tovább az oldalamon és keressen bizalommal.
-            Abban a szerencsés helyzetben tudhatom magam, hogy a szakmám egyben
-            a hivatásom is, amellyel 2014 óta foglalkozom. Azóta is folyamatos
-            továbbképzéseken veszek részt, hogy a legújabb eszközökkel és
-            legjobb tudással fogadhassam a hozzám forduló kedves vendégeimet.
-          </span>
-        </Grid>
-        <Grid item xs={12} lg={6}>
-          <Image alt="Kitti" src={IntroductionImage}></Image>
-        </Grid>
-      </Grid>
+      <div className={classes.centerDiv}>
+        <div className={classes.container}>
+          <Grid container justify="center">
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={8}
+              className={classes.alignCenterGrid}
+            >
+              <Image
+                alt="Kitti"
+                src="/Kitti_introduction.png"
+                width={420}
+                height={300}
+              ></Image>
+              <h1>Kolozsvári Kitti</h1>
+              <h2 className={classes.orangeColor}>Sminktetováló</h2>
+              <span>
+                „Az elegancia az egyetlen szépség, mely soha nem fakul.” a
+                természetességgel párban.
+              </span>
+              <span>
+                Pont emiatt is törekszem a természetes szépség erősítésére,
+                kiegészítésére és elérésére. Amennyiben megszületett az
+                elhatározás, hogy sminktetoválást szeretne, de még szüksége van
+                bővebb információkra böngésszen tovább az oldalamon és keressen
+                bizalommal. Abban a szerencsés helyzetben tudhatom magam, hogy a
+                szakmám egyben a hivatásom is, amellyel 2014 óta foglalkozom.
+                Azóta is folyamatos továbbképzéseken veszek részt, hogy a
+                legújabb eszközökkel és legjobb tudással fogadhassam a hozzám
+                forduló kedves vendégeimet.
+              </span>
+            </Grid>
+          </Grid>
+        </div>
+      </div>
 
       <h1>Introduction</h1>
       <h1>Services</h1>

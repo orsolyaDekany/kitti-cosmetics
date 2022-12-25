@@ -1,12 +1,8 @@
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
-import IntroductionImage from "../../assets/introduction.svg";
-import Kitti from "../../assets/Kitti_intro.svg";
-import DecorationDivider from "../../assets/decoration_bottom.svg";
+import ServiceArea from "../../components/services/ServiceArea";
 import { makeStyles } from "@material-ui/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+
 import {
   roseColor,
   orangeColor,
@@ -79,6 +75,34 @@ function HomePage() {
 
       <div className={classes.centerDiv}>
         <div className={classes.container}>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={4}>
+              <ServiceArea
+                description="lorem ipsum"
+                image={"/lips.svg"}
+                title="Ajak tetoválás"
+              ></ServiceArea>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <ServiceArea
+                description="lorem ipsum"
+                image={"/eyebrow.svg"}
+                title="Ajak tetoválás"
+              ></ServiceArea>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <ServiceArea
+                description="lorem ipsum"
+                image={"/eyelid.svg"}
+                title="Ajak tetoválás"
+              ></ServiceArea>
+            </Grid>
+          </Grid>
+        </div>
+      </div>
+
+      <div className={classes.centerDiv}>
+        <div className={classes.container}>
           <Grid container justify="center">
             <Grid
               item
@@ -118,7 +142,6 @@ function HomePage() {
       <h1>Introduction</h1>
       <h1>Services</h1>
       <h1>Salon</h1>
-      <h1>Gallery</h1>
       <h1>Vélemények</h1>
       <h1>Footer</h1>
     </>

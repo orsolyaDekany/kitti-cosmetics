@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { makeStyles } from "@material-ui/core/styles";
+import { darkColor } from "../../assets/jss/mui-kit";
 
 const ServiceStyle = {
   imageWrapper: {
@@ -14,15 +15,17 @@ const ServiceStyle = {
     padding: "0px",
   },
   descriptionWrapper: {
-    color: "black",
+    color: darkColor,
   },
   title: {
     marginTop: "0em",
+    color: darkColor,
   },
   description: {
-    color: "black",
+    color: darkColor,
     overflow: "hidden",
     margin: "0 1em 0 1em",
+    fontSize: "12px",
   },
 };
 

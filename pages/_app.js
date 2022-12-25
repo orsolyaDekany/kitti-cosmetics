@@ -1,18 +1,27 @@
 import Layout from "../components/layout";
-import { Inter } from "@next/font/google";
 import "./styles.scss";
+import { createTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
 
-const inter = Inter({
-  subsets: ["Raleway, sans-serif"],
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      "Playfair Display",
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+    ].join(","),
+  },
 });
 
 function myApp({ Component, pageProps }) {
   return (
-    <main className={inter.className}>
+    <ThemeProvider theme={theme}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </main>
+    </ThemeProvider>
   );
 }
 

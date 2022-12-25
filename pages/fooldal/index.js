@@ -2,6 +2,7 @@ import Image from "next/image";
 import Grid from "@mui/material/Grid";
 import ServiceArea from "../../components/services/ServiceArea";
 import { makeStyles } from "@material-ui/styles";
+import SectionTitle from "../../components/sectiontitle/Sectiontitle";
 
 import {
   roseColor,
@@ -73,28 +74,34 @@ function HomePage() {
         </div>
       </Parallax>
 
-      <div className={classes.centerDiv}>
+      <div style={{ backgroundColor: roseColor }} className={classes.centerDiv}>
         <div className={classes.container}>
-          <Grid container>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={12} md={12}>
+              <SectionTitle
+                title="Szolgáltatásaim"
+                subtitle="Tetoválások"
+              ></SectionTitle>
+            </Grid>
             <Grid item xs={12} sm={12} md={4}>
               <ServiceArea
-                description="lorem ipsum"
+                description="Félsatír, teljes ajaksatír, aquarell és 3D ajaktetoválásokat készítek."
                 image={"/lips.svg"}
                 title="Ajak tetoválás"
               ></ServiceArea>
             </Grid>
             <Grid item xs={12} sm={12} md={4}>
               <ServiceArea
-                description="lorem ipsum"
+                description="Púder, hibrid és mikroszálas szemöldöktetoválásokat készítek, teljesen személyre szabottan, konzultációt követően. Segítek kiválasztani a számodra megfelelőt."
                 image={"/eyebrow.svg"}
-                title="Ajak tetoválás"
+                title="Szemöldök tetoválás"
               ></ServiceArea>
             </Grid>
             <Grid item xs={12} sm={12} md={4}>
               <ServiceArea
-                description="lorem ipsum"
+                description="Szempillatősűrítés, tusvonal (normal, vastag), lágy füstöshatás, nutterfly (füstös hatás durva variációja) és alsóvonal szemhéjtetoválásokat készítek."
                 image={"/eyelid.svg"}
-                title="Ajak tetoválás"
+                title="Szemhéj tetoválás"
               ></ServiceArea>
             </Grid>
           </Grid>

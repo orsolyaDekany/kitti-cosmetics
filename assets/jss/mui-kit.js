@@ -8,17 +8,20 @@ const containerFluid = {
 
 const container = {
     ...containerFluid,
-    "@media (min-width: 576px)": {
-        maxWidth: "540px",
+    "@media (min-width: 595px)": {
+        maxWidth: "595px",
+    },
+    "@media (min-width: 600px)": {
+        maxWidth: "600px",
     },
     "@media (min-width: 768px)": {
-        maxWidth: "720px",
+        maxWidth: "768px",
     },
-    "@media (min-width: 992px)": {
-        maxWidth: "960px",
+    "@media (min-width: 889px)": {
+        maxWidth: "889px",
     },
-    "@media (min-width: 1200px)": {
-        maxWidth: "1140px",
+    "@media (min-width: 122px)": {
+        maxWidth: "889px",
     },
     zIndex: "12",
 };
@@ -33,7 +36,7 @@ const centerDiv = {
 
 export const roseColor = "#FFF6F4";
 export const orangeColor = "#F7A392";
-export const darkColor = "#252525";
+export const darkColor = "#886E6D";
 
 export {
     centerDiv,

@@ -34,11 +34,15 @@ const useStyles = makeStyles({
   },
   heroDescription: {
     color: "#FFFFFF",
-    fontFamily: "Playfair Display",
+    fontFamily: "Poppins",
   },
   alignCenterGrid: {
     marginLeft: "auto",
     marginRight: "auto",
+  },
+  introductionSection: {
+    marginLeft: "600px",
+    width: "50px",
   },
 });
 
@@ -50,20 +54,22 @@ function HomePage() {
       <Parallax
         responsive
         filterLight
-        image={"/heroImage.jpg"}
+        image={"/Kitti_homepage.png"}
         alt="Kitti Image"
       >
         <div className={classes.container}>
-          <Grid
-            container
-            className={classes.root.IntroductionSection}
-            spacing={10}
-          >
-            <Grid item xs={12} sm={12} md={8}>
-              <h1 className={classes.heroTitle}>
+          <Grid container spacing={10}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={8}
+              className={classes.introductionSection}
+            >
+              <h1 className={classes.heroTitle.darkColor}>
                 Kolozsvári Kitti Sminktetováló
               </h1>
-              <p className={classes.heroDescription}>
+              <p className={classes.heroDescription.darkColor}>
                 „Az elegancia az egyetlen szépség, mely soha nem fakul.”
               </p>
             </Grid>

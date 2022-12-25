@@ -38,7 +38,7 @@ const parallaxStyle = (theme) => ({
   },
   filter: {
     "&:before": {
-      background: "rgba(0, 0, 0, 0.55)",
+      background: "#FFF6F4",
     },
     "&:after,&:before": {
       position: "absolute",
@@ -56,7 +56,10 @@ const parallaxStyle = (theme) => ({
   },
   parallaxResponsive: {
     [theme.breakpoints.down("md")]: {
-      minHeight: "660px",
+      maxHeight: "660px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      maxHeight: "360px",
     },
   },
 });

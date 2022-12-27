@@ -80,7 +80,7 @@ function HomePage() {
             <Grid item xs={12} sm={12} md={12}>
               <SectionTitle
                 title="Szolgáltatásaim"
-                subtitle="Tetoválások"
+                subtitle="Sminktetoválások"
               ></SectionTitle>
             </Grid>
             <Grid item xs={12} sm={12} md={4}>
@@ -155,7 +155,27 @@ function HomePage() {
         </div>
       </div>
 
-      <h1>Salon</h1>
+      <div style={{ backgroundColor: roseColor }} className={classes.centerDiv}>
+        <div className={classes.container}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={12} md={12}>
+              <SectionTitle
+                title="Szalonom"
+                subtitle="Ahol szeretettel fogadlak"
+              ></SectionTitle>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <ServiceArea image={"salon1.png"}></ServiceArea>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <ServiceArea image={"salon2.png"}></ServiceArea>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <ServiceArea image={"salon3.png"}></ServiceArea>
+            </Grid>
+          </Grid>
+        </div>
+      </div>
       <h1>Vélemények</h1>
       <h1>Footer</h1>
     </>

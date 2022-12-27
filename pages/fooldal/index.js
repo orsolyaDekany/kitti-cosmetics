@@ -26,12 +26,12 @@ const useStyles = makeStyles({
   darkColor,
   heroTitle: {
     lineHeight: "1.5",
-    color: "#FFFFFF",
+    color: darkColor,
     fontFamily: "Playfair Display",
   },
   heroDescription: {
-    color: "#FFFFFF",
-    fontFamily: "Poppins",
+    color: darkColor,
+    fontFamily: "Playfair Display",
   },
   alignCenterGrid: {
     marginLeft: "auto",
@@ -63,10 +63,10 @@ function HomePage() {
               md={8}
               className={classes.introductionSection}
             >
-              <h1 className={classes.heroTitle.darkColor}>
+              <h1 className={classes.heroTitle}>
                 Kolozsvári Kitti Sminktetováló
               </h1>
-              <p className={classes.heroDescription.darkColor}>
+              <p className={classes.heroDescription}>
                 „Az elegancia az egyetlen szépség, mely soha nem fakul.”
               </p>
             </Grid>
@@ -111,6 +111,13 @@ function HomePage() {
       <div className={classes.centerDiv}>
         <div className={classes.container}>
           <Grid container justify="center">
+            <Grid item xs={12} sm={12} md={12}>
+              <SectionTitle
+                title="Kolozsvári Kitti"
+                subtitle="Professzionális sminktetováló"
+              ></SectionTitle>
+            </Grid>
+
             <Grid
               item
               xs={12}
@@ -121,15 +128,17 @@ function HomePage() {
               <Image
                 alt="Kitti"
                 src="/Kitti_introduction.png"
-                width={420}
-                height={300}
+                width={220}
+                height={150}
               ></Image>
-              <h1>Kolozsvári Kitti</h1>
-              <h2 className={classes.orangeColor}>Sminktetováló</h2>
-              <span>
-                „Az elegancia az egyetlen szépség, mely soha nem fakul.” a
-                természetességgel párban.
+            </Grid>
+            <Grid item xs={12} sm={12} md={12}>
+              <span className={classes.heroDescription}>
+                „Az elegancia az egyetlen szépség, mely soha nem fakul...”
               </span>
+              <br></br>
+              <br></br>
+              <span>...a természetességgel párban. </span>
               <span>
                 Pont emiatt is törekszem a természetes szépség erősítésére,
                 kiegészítésére és elérésére. Amennyiben megszületett az
@@ -146,8 +155,6 @@ function HomePage() {
         </div>
       </div>
 
-      <h1>Introduction</h1>
-      <h1>Services</h1>
       <h1>Salon</h1>
       <h1>Vélemények</h1>
       <h1>Footer</h1>

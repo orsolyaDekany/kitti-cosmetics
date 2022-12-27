@@ -8,9 +8,10 @@ const theme = createTheme({
     fontFamily: [
       "Playfair Display",
       "Roboto",
-      '"Helvetica Neue"',
+      "Helvetica Neue",
       "Arial",
       "sans-serif",
+      "Satisfy",
     ].join(","),
   },
 });

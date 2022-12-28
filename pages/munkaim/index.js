@@ -2,6 +2,7 @@ import ImageGallery from "../../components/gallery/ImageGallery";
 import { makeStyles } from "@material-ui/styles";
 import { container, centerDiv } from "../../assets/jss/mui-kit";
 import Parallax from "../../components/parallax/Parallax";
+import SectionTitle from "../../components/sectiontitle/Sectiontitle";
 
 const useStyles = makeStyles({
   container,
@@ -21,6 +22,10 @@ function Munkaim() {
       ></Parallax>
       <div className={classes.centerDiv}>
         <div className={classes.container}>
+          <SectionTitle
+            title="Szemhéjtetoválások"
+            subtitle="Púderes, hibrid, szálas"
+          ></SectionTitle>
           <ImageGallery></ImageGallery>
         </div>
       </div>

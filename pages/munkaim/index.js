@@ -1,4 +1,30 @@
+import ImageGallery from "../../components/gallery/ImageGallery";
+import { makeStyles } from "@material-ui/styles";
+import { container, centerDiv } from "../../assets/jss/mui-kit";
+import Parallax from "../../components/parallax/Parallax";
+
+const useStyles = makeStyles({
+  container,
+  centerDiv,
+});
+
 function Munkaim() {
-  return <h1>Munkaim</h1>;
+  const classes = useStyles();
+
+  return (
+    <>
+      <Parallax
+        responsive
+        filterLight
+        image={"Gallery_parallax.jpg"}
+        alt="Kitti galéria munkáim"
+      ></Parallax>
+      <div className={classes.centerDiv}>
+        <div className={classes.container}>
+          <ImageGallery></ImageGallery>
+        </div>
+      </div>
+    </>
+  );
 }
 export default Munkaim;

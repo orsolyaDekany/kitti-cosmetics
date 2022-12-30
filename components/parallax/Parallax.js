@@ -9,7 +9,7 @@ import classNames from "classnames";
 
 const parallaxStyle = (theme) => ({
   parallax: {
-    height: "90vh",
+    height: "80vh",
     maxHeight: "1000px",
     overflow: "hidden",
     position: "relative",
@@ -24,7 +24,7 @@ const parallaxStyle = (theme) => ({
   },
   filterLight: {
     "&:before": {
-      background: "rgba(0, 0, 0, 0.15)",
+      background: "rgb(177 136 156 / 57%)",
     },
     "&:after,&:before": {
       position: "absolute",
@@ -113,9 +113,7 @@ export default function Parallax(props) {
       }}
     >
       {children}
-      <span role="img" aria-label={image_alt}>
-        {" "}
-      </span>
+      <span role="img" aria-label={image_alt}></span>
     </div>
   );
 }

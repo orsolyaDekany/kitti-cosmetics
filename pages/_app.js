@@ -11,7 +11,7 @@ const theme = createTheme({
       "Helvetica Neue",
       "Arial",
       "sans-serif",
-      "Satisfy",
+      "Poppins",
     ].join(","),
   },
 });

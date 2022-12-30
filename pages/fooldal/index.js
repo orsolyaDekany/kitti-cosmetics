@@ -26,20 +26,21 @@ const useStyles = makeStyles({
   darkColor,
   heroTitle: {
     lineHeight: "1.5",
-    color: darkColor,
+    color: roseColor,
     fontFamily: "Playfair Display",
   },
   heroDescription: {
-    color: darkColor,
+    color: roseColor,
     fontFamily: "Playfair Display",
+    fontStyle: "italic",
   },
   alignCenterGrid: {
     marginLeft: "auto",
     marginRight: "auto",
   },
   introductionSection: {
-    marginLeft: "600px",
     width: "50px",
+    marginLeft: "500px",
   },
 });
 
@@ -51,7 +52,7 @@ function HomePage() {
       <Parallax
         responsive
         filterLight
-        image={"/Kitti_homepage.png"}
+        image={"/homepage_parallax.jpg"}
         alt="Kitti Image"
       >
         <div className={classes.container}>
@@ -133,7 +134,10 @@ function HomePage() {
               ></Image>
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
-              <span className={classes.heroDescription}>
+              <span
+                className={classes.heroDescription}
+                style={{ color: darkColor }}
+              >
                 „Az elegancia az egyetlen szépség, mely soha nem fakul...”
               </span>
               <br></br>

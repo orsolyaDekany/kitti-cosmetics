@@ -12,6 +12,7 @@ import {
   container,
 } from "../../assets/jss/mui-kit";
 import Parallax from "../../components/parallax/Parallax";
+import CarouselSlide from "../../components/carousel/CarouselSlide";
 
 const useStyles = makeStyles({
   centerDiv,
@@ -161,23 +162,12 @@ function HomePage() {
 
       <div style={{ backgroundColor: roseColor }} className={classes.centerDiv}>
         <div className={classes.container}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={12} md={12}>
-              <SectionTitle
-                title="Szalonom"
-                subtitle="Ahol szeretettel fogadlak"
-              ></SectionTitle>
-            </Grid>
-            <Grid item xs={12} sm={12} md={4}>
-              <ServiceArea image={"salon1.png"}></ServiceArea>
-            </Grid>
-            <Grid item xs={12} sm={12} md={4}>
-              <ServiceArea image={"salon2.png"}></ServiceArea>
-            </Grid>
-            <Grid item xs={12} sm={12} md={4}>
-              <ServiceArea image={"salon3.png"}></ServiceArea>
-            </Grid>
-          </Grid>
+          <SectionTitle
+            title="Szalonom"
+            subtitle="Ahol szeretettel fogadlak"
+          ></SectionTitle>
+
+          <CarouselSlide></CarouselSlide>
         </div>
       </div>
       <h1>Vélemények</h1>

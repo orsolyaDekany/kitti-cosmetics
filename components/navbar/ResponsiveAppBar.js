@@ -15,6 +15,8 @@ import Toolbar from "@mui/material/Toolbar";
 import { makeStyles } from "@material-ui/styles";
 import Image from "next/image";
 import navItems from "./ResponsiveAppBar.data";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import { darkColor, orangeColor, roseColor } from "../../assets/jss/mui-kit";
 
 const drawerWidth = 240;
 
@@ -24,6 +26,7 @@ const useStyles = makeStyles({
       backgroundColor: "#FFF6F4",
       padding: "6px 20px",
       boxShadow: "none",
+      letterSpacing: "1px",
     },
     "& .MuiButton-root": {
       padding: "0px 10px",
@@ -33,6 +36,8 @@ const useStyles = makeStyles({
 
 function ResponsiveAppBar(props) {
   const classes = useStyles();
+
+  const trigger = useScrollTrigger();
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -47,7 +52,7 @@ function ResponsiveAppBar(props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Image
         alt="Logo"
-        sx={{
+        style={{
           flexGrow: 1,
           display: { xs: "none", sm: "block" },
         }}
@@ -65,7 +70,7 @@ function ResponsiveAppBar(props) {
                 href={navItem.path}
                 style={{
                   textTransform: "capitalize",
-                  color: "#252525",
+                  color: darkColor,
                   fontSize: "16px",
                   textDecoration: "none",
                   margin: "0px 12px",
@@ -85,28 +90,30 @@ function ResponsiveAppBar(props) {
 
   return (
     <Box sx={{ display: "flex" }} className={classes.root}>
-      <AppBar component="nav">
+      <AppBar
+        component="nav"
+        elevation={trigger ? 24 : 0}
+        style={{
+          backgroundColor: trigger ? roseColor : "transparent",
+          boxShadow: trigger ? "300px 300px 5px orangeColor" : "none",
+          transition: "background-color 1s ease-out",
+        }}
+      >
         <Toolbar>
           <IconButton
-            color="#252525"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
+            style={{
+              backgroundColor: darkColor,
+              color: roseColor,
+            }}
           >
             <MenuIcon />
           </IconButton>
 
-          <Image
-            alt="Logo"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "block" },
-            }}
-            src="/logo.svg"
-            width={130}
-            height={130}
-          />
+          <Image alt="Logo" src="/logo.svg" width={130} height={130} />
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((navItem) => (
               <Link
@@ -115,25 +122,14 @@ function ResponsiveAppBar(props) {
                 href={navItem.path}
                 style={{
                   textTransform: "uppercase",
-                  color: "#252525",
                   fontSize: "14px",
                   textDecoration: "none",
                   padding: "2px 12px",
+                  color: trigger ? darkColor : roseColor,
                 }}
               >
                 {navItem.label}
               </Link>
-              /*<Button
-                key={item}
-                sx={{
-                  fontFamily: "Playfair Display",
-                  textTransform: "capitalize",
-                  color: "#252525",
-                  fontSize: "18px",
-                }}
-              >
-                {item}
-              </Button>*/
             ))}
           </Box>
         </Toolbar>
@@ -152,7 +148,7 @@ function ResponsiveAppBar(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              backgroundColor: "#F7A392",
+              backgroundColor: roseColor,
             },
           }}
         >

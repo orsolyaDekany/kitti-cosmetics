@@ -31,7 +31,7 @@ const centerDiv = {
     textAlign: "center",
     position: "relative",
     zIndex: "3",
-    padding: "30px 0 50px 0",
+    padding: "30px 0 20px 0",
 }
 
 export const roseColor = "#FFF6F4";

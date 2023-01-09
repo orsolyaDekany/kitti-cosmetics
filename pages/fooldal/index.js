@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Grid from "@mui/material/Grid";
 import ServiceArea from "../../components/services/ServiceArea";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import SectionTitle from "../../components/sectiontitle/Sectiontitle";
 
 import {
@@ -14,12 +13,15 @@ import {
 import Parallax from "../../components/parallax/Parallax";
 import CarouselSlide from "../../components/carousel/CarouselSlide";
 
-const useStyles = makeStyles({
+const homePageStyle = (theme) => ({
   centerDiv,
   container,
   root: {
     "& .MuiGrid-root": {
       backgroundColor: "#FFF6F4",
+    },
+    "& .MuiGrid-container": {
+      paddingTop: "100px",
     },
   },
   roseColor,
@@ -34,16 +36,26 @@ const useStyles = makeStyles({
     color: roseColor,
     fontFamily: "Playfair Display",
     fontStyle: "italic",
+    fontWeight: "bold",
   },
-  alignCenterGrid: {
-    marginLeft: "auto",
-    marginRight: "auto",
+  introductionImage: {
+    maxWidth: "400px",
   },
   introductionSection: {
     width: "50px",
     marginLeft: "500px",
   },
+  introductionContainer: {
+    [theme.breakpoints.down("lg")]: {
+      textAlign: "left",
+    },
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
+  },
 });
+
+const useStyles = makeStyles(homePageStyle);
 
 function HomePage() {
   const classes = useStyles();
@@ -110,8 +122,8 @@ function HomePage() {
         </div>
       </div>
 
-      <div className={classes.centerDiv}>
-        <div className={classes.container}>
+      <div className={classes.container}>
+        <div className={classes.centerDiv}>
           <Grid container justify="center">
             <Grid item xs={12} sm={12} md={12}>
               <SectionTitle
@@ -119,22 +131,24 @@ function HomePage() {
                 subtitle="Professzionális sminktetováló"
               ></SectionTitle>
             </Grid>
+          </Grid>
+        </div>
 
+        <div className={classes.centerDiv}>
+          <Grid container justifyContent="center" alignItems="center">
+            <Grid item xs={12} sm={12} md={6}>
+              <img
+                className={classes.introductionImage}
+                src="/Kitti_introduction.png"
+              ></img>
+            </Grid>
             <Grid
               item
               xs={12}
               sm={12}
-              md={8}
-              className={classes.alignCenterGrid}
+              md={6}
+              className={classes.introductionContainer}
             >
-              <Image
-                alt="Kitti"
-                src="/Kitti_introduction.png"
-                width={220}
-                height={150}
-              ></Image>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
               <span
                 className={classes.heroDescription}
                 style={{ color: darkColor }}

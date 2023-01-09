@@ -90,7 +90,7 @@ function HomePage() {
 
       <div style={{ backgroundColor: roseColor }} className={classes.centerDiv}>
         <div className={classes.container}>
-          <Grid container spacing={2}>
+          <Grid container>
             <Grid item xs={12} sm={12} md={12}>
               <SectionTitle
                 title="Szolgáltatásaim"
@@ -122,20 +122,16 @@ function HomePage() {
         </div>
       </div>
 
-      <div className={classes.container}>
-        <div className={classes.centerDiv}>
-          <Grid container justify="center">
+      <div className={classes.centerDiv}>
+        <div className={classes.container}>
+          <Grid container alignItems="center">
             <Grid item xs={12} sm={12} md={12}>
               <SectionTitle
                 title="Kolozsvári Kitti"
                 subtitle="Professzionális sminktetováló"
               ></SectionTitle>
             </Grid>
-          </Grid>
-        </div>
 
-        <div className={classes.centerDiv}>
-          <Grid container justifyContent="center" alignItems="center">
             <Grid item xs={12} sm={12} md={6}>
               <img
                 className={classes.introductionImage}

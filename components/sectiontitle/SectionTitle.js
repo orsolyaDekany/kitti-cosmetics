@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 import { darkColor, orangeColor } from "../../assets/jss/mui-kit";
 
 const sectionTitleStyle = {
+  sectionContainer: {
+    marginBottom: "50px",
+  },
   subtitle: {
     color: orangeColor,
   },
@@ -20,7 +23,7 @@ function SectionTitle(props) {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.sectionContainer}>
       <h1 className={classes.title}>{title}</h1>
       <p className={classes.subtitle}>{subtitle}</p>
     </div>

@@ -7,7 +7,7 @@ import { darkColor } from "../../assets/jss/mui-kit";
 
 const ServiceStyle = {
   imageWrapper: {
-    margin: "2em 0 .5em",
+    margin: "0 0 0 .5em",
   },
   serviceArea: {
     maxWidth: "360px",
